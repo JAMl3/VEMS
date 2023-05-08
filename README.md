@@ -1,5 +1,5 @@
 VEMS
-VEMS (Venue Event Management System) is a web application that allows users to manage events at various venues. It was developed using Flask and SQLAlchemy, and includes features such as event creation, editing, and deletion, venue management, user authentication, and more.
+VEMS (Virtual Event Management System) is a web application that allows users to manage events at various venues. It was developed using Flask and SQLAlchemy, and includes features such as event creation, editing, and deletion, venue management, user authentication, and more.
 
 
 Installation
