@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+  <div style="background-color: #282c34; color: #fff; padding: 20px; border-radius: 5px;">
+    <h1 style="text-align: center;">Dashboard</h1>
+    <div style="text-align: center;">
+      <a href="{{ url_for('create_event') }}" style="color: #fff; background-color: #61dafb; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Create Event</a>
+    </div>
+    {% if events %}
+      <table style="width: 100%; margin-top: 20px;">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for event in events %}
+            <tr>
+              <td>{{ event.title }}</td>
+              <td>{{ event.start_time }}</td>
+              <td>{{ event.end_time }}</td>
+              <td>
+                <a href="{{ url_for('event', event_id=event.id) }}" style="color: #fff; background-color: #61dafb; padding: 5px 10px; border-radius: 5px; text-decoration: none;">View</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p style="text-align: center;">No events found.</p>
+    {% endif %}
+  </div>
+{% endblock %}

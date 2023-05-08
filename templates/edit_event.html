@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+  <form method="POST">
+    {{ form.csrf_token }}
+    <h1>Edit Event</h1>
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" value="{{ event.title }}" required>
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" value="{{ event.date }}" required>
+    </div>
+    <div>
+      <label for="start_time">Start Time:</label>
+      <input type="time" id="start_time" name="start_time" value="{{ event.start_time }}" required>
+    </div>
+    <div>
+      <label for="end_time">End Time:</label>
+      <input type="time" id="end_time" name="end_time" value="{{ event.end_time }}" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required>{{ event.description }}</textarea>
+    </div>
+    <button type="edit-event">Submit</button>
+  </form>
+{% endblock %}
